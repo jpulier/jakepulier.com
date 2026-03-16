@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jake Pulier</title>
+    <meta name="description" content="Jake Pulier — builder, artist, investor">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            background: #f9f8fb;
+            color: #333333;
+            line-height: 1.8;
+            font-size: 1.15rem;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .page {
+            background: #ffffff;
+            max-width: 680px;
+            width: 100%;
+            padding: 60px 60px 40px;
+            border: 1px solid #e0d6ec;
+            border-radius: 2px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        nav {
+            margin-bottom: 48px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #7B5EA7;
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin: 0 16px;
+            letter-spacing: 0.02em;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .headshot {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 20px rgba(123, 94, 167, 0.15);
+            margin-bottom: 32px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .list {
+            width: 100%;
+            list-style: none;
+        }
+
+        .list li {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+        }
+
+        .list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .num {
+            color: #7B5EA7;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .list a {
+            color: #7B5EA7;
+            text-decoration: none;
+        }
+
+        .list a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: auto;
+            padding-top: 60px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        footer a {
+            color: #7B5EA7;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer .sep {
+            margin: 0 10px;
+            color: #ccc;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 16px 8px;
+            }
+
+            .page {
+                padding: 36px 28px 28px;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            nav a {
+                margin: 0 10px;
+                font-size: 0.88rem;
+            }
+
+            .headshot {
+                width: 120px;
+                height: 120px;
+            }
+
+            .list li {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <nav>
+            <a href="#">Home</a>
+            <a href="https://open.spotify.com/artist/01S3mAkOdHDp4L9qho7N6B?si=5whETMEyTbaHGzhpLDdbXA" target="_blank" rel="noopener noreferrer">Music</a>
+            <a href="#">Ventures</a>
+            <a href="#">About</a>
+        </nav>
+
+        <img src="headshot.jpg" alt="Jake Pulier" class="headshot">
+
+        <h1>Hi, I'm Jake Pulier</h1>
+
+        <ul class="list">
+            <li><span class="num">—</span><span>I make music as <a href="https://pulyay.com">Pulyay</a>.</span></li>
+            <li><span class="num">—</span><span>I am building <a href="https://flowave.com">Flowave</a> — AI-powered lead generation at scale.</span></li>
+            <li><span class="num">—</span><span>I am building <a href="https://miracledept.com">The Miracle Department</a>.</span></li>
+            <li><span class="num">—</span><span>I am an active angel investor.</span></li>
+        </ul>
+
+        <footer>
+            <a href="#">Twitter</a>
+            <span class="sep">·</span>
+            <a href="#">LinkedIn</a>
+            <span class="sep">·</span>
+            <a href="#">Email</a>
+        </footer>
+    </div>
+</body>
+</html>
