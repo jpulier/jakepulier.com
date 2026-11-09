@@ -4,8 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jake Pulier</title>
-    <meta name="description" content="Jake Pulier — builder, artist, investor">
+    <meta name="description" content="Growth marketer and musician in New York. Partner at Mercer Ads, CEO of FloWave. I make music as Pulyay.">
+    <meta property="og:title" content="Jake Pulier">
+    <meta property="og:description" content="Growth marketer and musician in New York. Partner at Mercer Ads, CEO of FloWave. I make music as Pulyay.">
+    <meta property="og:image" content="https://www.jakepulier.com/portrait.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@jakepulier">
+    <meta name="color-scheme" content="light">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400&family=Homemade+Apple&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --paper: #FBFBFA;
+            --text: #1A1A1A;
+                        --soft: #5E5E5E;
+            --rule: #E6E6E3;
+            --ink: #7A1526;
+        }
+
         *, *::before, *::after {
             margin: 0;
             padding: 0;
@@ -13,171 +30,156 @@
         }
 
         body {
-            font-family: Georgia, 'Times New Roman', serif;
-            background: #f9f8fb;
-            color: #333333;
-            line-height: 1.8;
-            font-size: 1.15rem;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            padding: 40px 20px;
+            background: var(--paper);
+            color: var(--text);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .page {
-            background: #ffffff;
-            max-width: 680px;
-            width: 100%;
-            padding: 60px 60px 40px;
-            border: 1px solid #e0d6ec;
-            border-radius: 2px;
+        a {
+            color: #111111;
+            text-decoration: underline;
+            text-decoration-color: #C9C9C9;
+            text-underline-offset: 3px;
+            transition: color .15s ease, text-decoration-color .15s ease;
+        }
+
+        a:hover {
+            color: var(--ink);
+            text-decoration-color: currentColor;
+        }
+
+        main {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 88px 20px 112px;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            gap: 56px;
         }
 
-        nav {
-            margin-bottom: 48px;
-            text-align: center;
+        header {
+            display: flex;
+            align-items: flex-end;
+            gap: 4px;
         }
 
-        nav a {
-            color: #7B5EA7;
-            text-decoration: none;
-            font-size: 0.95rem;
-            margin: 0 16px;
-            letter-spacing: 0.02em;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        .headshot {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
+        .portrait {
+            width: 168px;
+            height: 168px;
             object-fit: cover;
-            box-shadow: 0 4px 20px rgba(123, 94, 167, 0.15);
-            margin-bottom: 32px;
+            object-position: center 22%;
+            mix-blend-mode: multiply;
+        }
+
+        .me {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-bottom: 18px;
+        }
+
+        .me svg { margin-left: -6px; }
+
+        .me span {
+            font-family: 'Homemade Apple', cursive;
+            font-size: 18px;
+            color: var(--ink);
+            margin-left: 52px;
+            margin-top: -30px;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
         }
 
         h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 40px;
-            text-align: center;
+            margin-bottom: 4px;
+            font-family: 'Newsreader', Georgia, serif;
+            font-size: 40px;
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -0.01em;
         }
 
-        .list {
-            width: 100%;
-            list-style: none;
+        /* the arrow draws itself in on load */
+        .draw path {
+            stroke-dasharray: 400;
+            stroke-dashoffset: 400;
+            animation: draw .9s ease-out .2s forwards;
         }
 
-        .list li {
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: baseline;
-            gap: 12px;
+        @keyframes draw {
+            to { stroke-dashoffset: 0; }
         }
 
-        .list li:last-child {
-            margin-bottom: 0;
-        }
-
-        .num {
-            color: #7B5EA7;
-            font-size: 1rem;
-            flex-shrink: 0;
-        }
-
-        .list a {
-            color: #7B5EA7;
-            text-decoration: none;
-        }
-
-        .list a:hover {
-            text-decoration: underline;
+        @media (prefers-reduced-motion: reduce) {
+            .draw path {
+                animation: none;
+                stroke-dashoffset: 0;
+            }
         }
 
         footer {
-            margin-top: auto;
-            padding-top: 60px;
-            text-align: center;
-            font-size: 0.85rem;
-            color: #999;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 12px;
+            padding-top: 24px;
+            border-top: 1px solid var(--rule);
+            color: var(--soft);
+            font-size: 14px;
         }
 
-        footer a {
-            color: #7B5EA7;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        footer .sep {
-            margin: 0 10px;
-            color: #ccc;
+        footer nav {
+            display: flex;
+            gap: 18px;
         }
 
         @media (max-width: 600px) {
-            body {
-                padding: 16px 8px;
+            main {
+                padding: 56px 20px 80px;
+                gap: 44px;
             }
 
-            .page {
-                padding: 36px 28px 28px;
+            .portrait {
+                width: 136px;
+                height: 136px;
             }
 
-            h1 {
-                font-size: 1.6rem;
-            }
-
-            nav a {
-                margin: 0 10px;
-                font-size: 0.88rem;
-            }
-
-            .headshot {
-                width: 120px;
-                height: 120px;
-            }
-
-            .list li {
-                font-size: 1rem;
-            }
+            h1 { font-size: 34px; }
         }
     </style>
 </head>
 <body>
-    <div class="page">
-        <nav>
-            <a href="#">Home</a>
-            <a href="https://open.spotify.com/artist/01S3mAkOdHDp4L9qho7N6B?si=5whETMEyTbaHGzhpLDdbXA" target="_blank" rel="noopener noreferrer">Music</a>
-            <a href="#">Ventures</a>
-            <a href="#">About</a>
-        </nav>
+    <main>
+        <header>
+            <img src="portrait.jpg" alt="Pencil portrait of Jake Pulier" class="portrait">
+            <div class="me">
+                <svg class="draw" width="72" height="40" viewBox="0 0 72 40" fill="none" aria-hidden="true"><path d="M68 6 C 50 4, 26 10, 8 30 M8 30 L 9 18 M8 30 L 20 28" stroke="#7A1526" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>me</span>
+            </div>
+        </header>
 
-        <img src="headshot.jpg" alt="Jake Pulier" class="headshot">
-
-        <h1>Hi, I'm Jake Pulier</h1>
-
-        <ul class="list">
-            <li><span class="num">—</span><span>I make music as <a href="https://pulyay.com">Pulyay</a>.</span></li>
-            <li><span class="num">—</span><span>I am building <a href="https://flowave.co">Flowave</a>.</span></li>
-            <li><span class="num">—</span><span>I am an active angel investor.</span></li>
-        </ul>
+        <section>
+            <h1>Hi, I'm Jake.</h1>
+            <p>I'm a growth marketer and musician in New York. Partner at <a href="https://mercerads.com">Mercer Ads</a>, a creative agency for paid ads, and CEO of <a href="https://flowave.co">FloWave</a>.</p>
+            <p>I make music as <a href="https://open.spotify.com/artist/01S3mAkOdHDp4L9qho7N6B">Pulyay</a>. And I build a lot of different things.</p>
+        </section>
 
         <footer>
-            <a href="https://x.com/jakepulier" target="_blank" rel="noopener noreferrer">X</a>
-            <span class="sep">·</span>
-            <a href="https://www.linkedin.com/in/jake-pulier-bb0152150/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <span class="sep">·</span>
-            <a href="mailto:jpulier@gmail.com">Email</a>
+            <span>Say hi: <a href="mailto:jpulier@gmail.com">jpulier@gmail.com</a></span>
+            <nav>
+                <a href="https://x.com/jakepulier">X</a>
+                <a href="https://www.linkedin.com/in/jake-pulier-bb0152150/">LinkedIn</a>
+                <a href="https://open.spotify.com/artist/01S3mAkOdHDp4L9qho7N6B">Spotify</a>
+            </nav>
         </footer>
-    </div>
+    </main>
 </body>
 </html>
